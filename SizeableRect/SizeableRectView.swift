@@ -8,21 +8,15 @@
 import SwiftUI
 
 struct SizeableRectView: View {
-	@State var offset = CGSize.zero
-	@State var startLocation = CGPoint.zero
+	@State var rect = CGRect(x: 0, y: 0, width: 0, height: 0)
 
 	var drag: some Gesture {
 		DragGesture(minimumDistance: 1)
 			.onChanged() { value in
-				let x = value.location.x - value.startLocation.x
-				let y = value.location.y - value.startLocation.y
-				startLocation = value.startLocation
-				self.offset = CGSize(width: abs(x), height: abs(y))
+				rect = makeRect(value.location, value.startLocation)
 			}
 			.onEnded() { value in
-				let x = value.location.x - value.startLocation.x
-				let y = value.location.y - value.startLocation.y
-				self.offset = CGSize(width: abs(x), height: abs(y))
+				rect = makeRect(value.location, value.startLocation)
 			}
 	}
 
@@ -31,17 +25,33 @@ struct SizeableRectView: View {
 			Rectangle()
 				.gesture(drag)
 			Rectangle()
-				.offset(CGPoint(x: startLocation.x, y: startLocation.y))
-				.frame(width: self.offset.width, height: self.offset.height)
+				.offset(rect.origin)
+				.frame(width: rect.size.width, height: rect.size.height)
 				.foregroundColor(.blue)
 		}
     }
 	
-	func fixSize(_ start: CGPoint, _ end: CGPoint) -> CGSize {
-		let w = end.x - start.x
-		let h = end.y - start.y
+	func makeRect(_ p1: CGPoint, _ p2: CGPoint) -> CGRect {
+		var xMin = 0.0
+		var xMax = 0.0
+		var yMin = 0.0
+		var yMax = 0.0
+		if p1.x < p2.x {
+			xMin = p1.x
+			xMax = p2.x
+		} else {
+			xMin = p2.x
+			xMax = p1.x
+		}
+		if p1.y < p2.y {
+			yMin = p1.y
+			yMax = p2.y
+		} else {
+			yMin = p2.y
+			yMax = p1.y
+		}
 		
-		return CGSize(width: abs(w), height: abs(h))
+		return CGRect(x: xMin, y: yMin, width: xMax - xMin, height: yMax - yMin)
 	}
 }
 
