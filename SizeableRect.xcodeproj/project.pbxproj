@@ -11,6 +11,7 @@
 		E4FC54002B98D336002C1BF5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FC53FF2B98D336002C1BF5 /* ContentView.swift */; };
 		E4FC54022B98D337002C1BF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FC54012B98D337002C1BF5 /* Assets.xcassets */; };
 		E4FC54052B98D337002C1BF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FC54042B98D337002C1BF5 /* Preview Assets.xcassets */; };
+		E4FC540C2B98D386002C1BF5 /* SizeableRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FC540B2B98D386002C1BF5 /* SizeableRectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		E4FC53FF2B98D336002C1BF5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E4FC54012B98D337002C1BF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4FC54042B98D337002C1BF5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E4FC540B2B98D386002C1BF5 /* SizeableRectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeableRectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				E4FC53FD2B98D336002C1BF5 /* SizeableRectApp.swift */,
 				E4FC53FF2B98D336002C1BF5 /* ContentView.swift */,
+				E4FC540B2B98D386002C1BF5 /* SizeableRectView.swift */,
 				E4FC54012B98D337002C1BF5 /* Assets.xcassets */,
 				E4FC54032B98D337002C1BF5 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				E4FC54002B98D336002C1BF5 /* ContentView.swift in Sources */,
 				E4FC53FE2B98D336002C1BF5 /* SizeableRectApp.swift in Sources */,
+				E4FC540C2B98D386002C1BF5 /* SizeableRectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
